@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oratio</title>
+  <title>
+    <% if content_for? :head_title %>
+    <%= yield(:head_title) %>
+    - Oratio
+    <% else %>
+    Oratio
+    <% end%>
+  </title>
   <%= stylesheet_link_tag 'application', 'page' %>
   <%= javascript_include_tag 'jquery', 'rails', 'application' %>
   <%= csrf_meta_tag %>
@@ -10,12 +17,18 @@
 
   <div id="outer-container">
     
+    <%= yield(:page_title) if content_for? :page_title %>
     <div id="inner-container">
       <div id="main-content">
         
         <%= yield %>
         
       </div>
+    </div>
+    
+    <div id="footer">
+      &copy; <%= DateTime.now.year %> Cody Krieger, Brian To, and the 
+      <a href="http://sse.se.rit.edu">Society of Software Engineers</a>.
     </div>
     
   </div>

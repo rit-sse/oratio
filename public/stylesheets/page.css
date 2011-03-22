@@ -6,14 +6,29 @@ body {
 /* page element styles */
 #outer-container {
   width: 980px;
-  margin: 0 auto;
-  -webkit-border-radius: 10px;
+  margin: 20px auto;
+  position: relative;
 }
 
 #inner-container {
-  
+  margin: 10px 0;
+  padding: 15px;
+  background: #fff;
+  -webkit-border-radius: 7px;
+  position: relative;
+}
+
+h1#page_title {
+  padding: 0 0 0 15px;
+  font-weight: bold;
+  font-size: 2.5em;
 }
 
 #main-content {
   
+}
+
+#footer {
+  margin: 25px 0;
+  text-align: center;
 }

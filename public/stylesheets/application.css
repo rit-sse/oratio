@@ -83,10 +83,28 @@ font-style: normal;
 body {
   font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino", "Hoefler Text", "Baskerville", serif;
   font-size: 0.985em;
+  color: #444;
 }
 
-h1, h2, h3, h4, h5, h6 {
+a {
+  color: #338435;
+  text-decoration: none;
+}
+a:hover {
+  color: #256026;
+}
+
+h1 {
+  font-family: "Lobster 13", cursive;
+  color: #000;
+}
+h2, h3, h4, h5, h6 {
   font-family: "Liberation Sans", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+  color: #000;
+}
+
+p {
+  margin: 0 0 15px;
 }
 
 pre, code {
@@ -96,3 +114,19 @@ pre, code {
 
 /* classes */
 .special-text { font-family: "Lobster 13", cursive; font-size: 1.008em; }
+
+/* ui widgets */
+.huge-list {
+}
+.huge-list > div {
+  padding: 7px;
+}
+.huge-list > div.odd {
+  background: #e3e3e3;
+}
+.huge-list > div:hover {
+  background: #ffddde;
+}
+.huge-list > div .title {
+  font-size: 2.4em;
+}
