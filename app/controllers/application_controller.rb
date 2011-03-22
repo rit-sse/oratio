@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def current_user
-    @current_user
+    @current_user ||= AllowedUsers.find_by_id(session[:user_id])
   end
 
   def signed_in?
@@ -17,7 +17,7 @@ protected
 
   def current_user=(user)
     @current_user = user
-    session[:user_id] = user
+    session[:user_id] = user.id
   end
   
   def authorize!

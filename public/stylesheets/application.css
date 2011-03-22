@@ -107,6 +107,12 @@ p {
 pre, code {
   font-family: "Andale Mono", "Menlo", "Courier New", "Courier", "Mono", monospace;
   font-size: 1.037em;
+  display: block;
+}
+code {
+  text-align: left;
+  background: #999;
+  padding: 10px;
 }
 
 /* classes */

@@ -1,9 +1,16 @@
 class SessionsController < ApplicationController
   def callback
-    # Log the authorizing user in.
-    self.current_user = auth["extra"][:uid].first
+    username = auth["extra"][:uid].first
+    user = AllowedUsers.find_by_username username
     
-    redirect_to root_path, :notice => "You have signed in successfully."
+    unless user.nil?
+      # Log the authorizing user in.
+      self.current_user = user
+
+      redirect_to (session[:return_url] ||= root_path), :notice => "You have signed in successfully."
+    else
+      redirect_to root_path, :notice => "You're ugly, and we don't want you here."
+    end
   end
   
   def auth; request.env['omniauth.auth'] end

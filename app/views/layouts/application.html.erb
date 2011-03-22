@@ -19,17 +19,33 @@
     
     <h1 id="app_name"><%= @app_name %></h1>
     <div id="inner-container">
+      
+      <% if signed_in? %>
+      <div id="current-login">
+        Welcome<br />
+        <%= link_to "Sign Out", sign_out_path %>
+      </div>
+      <% end %>
+      
       <%= yield(:page_title) if content_for? :page_title %>
       <div id="main-content">
-        
         <%= yield %>
-        
       </div>
+      
     </div>
     
     <div id="footer">
       &copy; <%= DateTime.now.year %> Cody Krieger, Brian To, and the 
       <a href="http://sse.se.rit.edu">Society of Software Engineers</a>.
+      
+      <% if Rails.env.development? %>
+      <br /><br />
+      <code>
+        Session info:
+        <br /><br />
+        <%= session.inspect %>
+      </code>
+      <% end %>
     </div>
     
   </div>
