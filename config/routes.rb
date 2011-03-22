@@ -1,4 +1,8 @@
 Oratio::Application.routes.draw do
+  resources :slides
+
+  resources :slide_types
+
   resources :slideshows
 
   match '/auth/:provider/callback', :to => 'sessions#callback'
