@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20110322204552) do
   create_table "slideshows", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.boolean  "visible"
+    t.boolean  "visible",     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

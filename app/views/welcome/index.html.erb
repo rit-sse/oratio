@@ -3,32 +3,10 @@
 <p>Please select a slideshow to view from the list below.</p>
 
 <div class="huge-list">
-  <div class="odd">
-    <div class="title"><a href="#">Slideshow 1</a></div>
-    <div class="desc">
-      Praesent eget neque eu eros interdum malesuada non vel leo. 
-      Sed fringilla porta ligula egestas tincidunt.
+  <% @slideshows.each do |show| %>
+    <div class="<%= cycle "odd", "" %>">
+      <div class="title"><%= show.name %></div>
+      <div class="desc"><%= show.description %></div>
     </div>
-  </div>
-  <div>
-    <div class="title"><a href="#">Slideshow 2</a></div>
-    <div class="desc">
-      Praesent eget neque eu eros interdum malesuada non vel leo. 
-      Sed fringilla porta ligula egestas tincidunt.
-    </div>
-  </div>
-  <div class="odd">
-    <div class="title"><a href="#">Slideshow 3</a></div>
-    <div class="desc">
-      Praesent eget neque eu eros interdum malesuada non vel leo. 
-      Sed fringilla porta ligula egestas tincidunt.
-    </div>
-  </div>
-  <div>
-    <div class="title"><a href="#">Slideshow 4</a></div>
-    <div class="desc">
-      Praesent eget neque eu eros interdum malesuada non vel leo. 
-      Sed fringilla porta ligula egestas tincidunt.
-    </div>
-  </div>
+  <% end%>
 </div>
