@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     addressable (2.2.4)
+    annotate-models (1.0.4)
     arel (2.0.9)
     builder (2.1.2)
     capybara (0.4.1.2)
@@ -177,6 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate-models
   capybara
   cucumber-rails
   haml (>= 3.0.0)

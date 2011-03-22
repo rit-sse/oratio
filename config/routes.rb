@@ -6,6 +6,8 @@ Oratio::Application.routes.draw do
   end
   
   match '/auth/:provider/callback', :to => 'sessions#callback'
+  match '/auth/failure', :to => 'sessions#login_failure'
+  match '/auth/sign_out', :to => 'sessions#sign_out'
   
   root :to => "welcome#index"
   

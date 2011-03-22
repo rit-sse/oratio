@@ -4,9 +4,9 @@
   <title>
     <% if content_for? :head_title %>
     <%= yield(:head_title) %>
-    - Oratio
+    - <%= @app_name %>
     <% else %>
-    Oratio
+    <%= @app_name %>
     <% end%>
   </title>
   <%= stylesheet_link_tag 'application', 'page' %>

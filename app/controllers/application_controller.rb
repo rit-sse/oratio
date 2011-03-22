@@ -3,6 +3,36 @@ class ApplicationController < ActionController::Base
   
   before_filter :setup_globals
   
+protected
+
+  def current_user
+    @current_user
+  end
+
+  def signed_in?
+    !!current_user
+  end
+
+  helper_method :current_user, :signed_in?
+
+  def current_user=(user)
+    @current_user = user
+    session[:user_id] = user
+  end
+  
+  def authorize!
+    unless self.signed_in?
+      session[:return_url] = request.uri
+      redirect_to "/auth/ldap", :notice => "You must sign in to continue."
+    end
+  end
+  
+  def sign_out!
+    session[:user_id] = nil
+    session[:return_url] = nil
+    redirect_to root_path, :notice => "You have signed out successfully."
+  end
+
 private
 
   def setup_globals
