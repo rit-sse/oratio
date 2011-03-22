@@ -120,7 +120,17 @@ code {
 
 /* ui widgets */
 .flash {
-  padding: 3px 5px;
+  padding: 5px;
+  margin: 5px 0 20px 0;
+  color: #000;
+}
+.flash.notice {
+  background: #74b9ec;
+  border: 1px solid #4081af;
+}
+.flash.alert {
+  background: #e26262;
+  border: 1px solid #893b3b;
 }
 
 .huge-list {

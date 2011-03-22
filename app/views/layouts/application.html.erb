@@ -32,7 +32,7 @@
         <% unless flash.nil? %>
           <% flash.each do |f, m| %>
             <div class="flash <%= f %>">
-              <%= "#{f.capitalize}: #{m}" %>
+              <%= m %>
             </div>
           <% end %>
         <% end %>
