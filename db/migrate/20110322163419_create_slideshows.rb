@@ -3,7 +3,7 @@ class CreateSlideshows < ActiveRecord::Migration
     create_table :slideshows do |t|
       t.string :name, :nil => false
       t.string :description
-      t.boolean :visible, :nil => false, :default => true
+      t.boolean :visible, :null => false, :default => true
 
       t.timestamps
     end

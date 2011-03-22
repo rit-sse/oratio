@@ -1,8 +1,8 @@
 class CreateAllowedUsers < ActiveRecord::Migration
   def self.up
     create_table :allowed_users do |t|
-      t.string :name, :nil => false
-      t.string :username, :nil => false
+      t.string :name, :null => false
+      t.string :username, :null => false
 
       t.timestamps
     end

@@ -1,7 +1,7 @@
 class CreateSlideTypes < ActiveRecord::Migration
   def self.up
     create_table :slide_types do |t|
-      t.string :name, :nil => false
+      t.string :name, :null => false
 
       t.timestamps
     end
