@@ -12,8 +12,11 @@ protected
   def signed_in?
     !!current_user
   end
+  
+  def sign_in_path; "/auth/ldap"; end
+  def sign_out_path; "/auth/sign_out"; end
 
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :sign_in_path, :sign_out_path
 
   def current_user=(user)
     @current_user = user
@@ -23,7 +26,7 @@ protected
   def authorize!
     unless signed_in?
       session[:return_url] = request.fullpath
-      redirect_to "/auth/ldap", :notice => "You must sign in to continue."
+      redirect_to sign_in_path, :notice => "You must sign in to continue."
     end
   end
   

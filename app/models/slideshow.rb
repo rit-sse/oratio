@@ -12,5 +12,4 @@
 #
 
 class Slideshow < ActiveRecord::Base
-  default_scope where(:visible => true)
 end

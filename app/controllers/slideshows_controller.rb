@@ -1,11 +1,15 @@
 class SlideshowsController < ApplicationController
+  
+  before_filter :authorize!
+  skip_before_filter :authorize!, :only => [:index, :show]
+  
   # GET /slideshows
   # GET /slideshows.xml
   def index
     @slideshows = Slideshow.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { redirect_to root_path }
       format.xml  { render :xml => @slideshows }
     end
   end

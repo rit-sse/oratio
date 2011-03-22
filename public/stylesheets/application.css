@@ -148,59 +148,67 @@ code {
   font-size: 2.4em;
 }
 
+.edit-controls {
+  font-size: 0.8em;
+  padding: 10px 0 3px;
+  margin: 10px 0 0;
+  border-top: 1px dashed #bbb;
+}
+.edit-controls a {
+  display: inline-block;
+  margin: 0 3px;
+  color: #ba3b3b;
+}
+.edit-controls a:first-child {
+  margin-left: 0;
+}
+.edit-controls a:hover {
+  color: #893b3b;
+}
+
 /* button awesomeness */
 
 .button {
   font: normal normal normal 14px/18px 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
   display: inline-block;
   background: #3b88d8;
-  background: -moz-linear-gradient(0% 100% 90deg, #377ad0, #52a8e8);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
   border-top: 1px solid #4081af;
   border-right: 1px solid #2e69a3;
   border-bottom: 1px solid #20559a;
   border-left: 1px solid #2e69a3;
-  -moz-box-shadow: inset 0 1px 0 0 rgba(255,255,255,.2), 0 1px 2px 0 #b3b3b3;
   -webkit-box-shadow: inset 0 1px 0 0 rgba(255,255,255,.2), 0 1px 2px 0 #b3b3b3;
   text-shadow: 0 -1px 1px #3275bc;
   font-size: 11px;
   font-weight: normal;
   color: #fff !important;
-  -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
-  border-radius: 12px;
   padding: 4px 11px;
   line-height: normal !important;
 }
-.button::-moz-focus-inner { border: 0; }
 .super.button {
-  -moz-border-radius: 5px !important;
   -webkit-border-radius: 5px !important;
   border-radius: 5px !important;
 }
 .red.button {
   background: #ba3b3b;
-  background: -moz-linear-gradient(0% 100% 90deg, #ba3b3b, #db3b3b);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#db3b3b), to(#ba3b3b));
   border: 1px solid #893b3b;
   text-shadow: 0 -1px 1px #a12d2e;
 }
 .red.button:hover {
   background: #ba3b3b;
-  background: -moz-linear-gradient(0% 100% 90deg, #ba3b3b, #db3b3b);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cb3b3b), to(#9b3b3b));
   border: 1px solid #593b3b;
   text-shadow: 0 -1px 1px #7e2324;
 }
 .medium.button {
-  -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   font-size: 15px;
   padding: 5px 12px;
 }
 .large.button {
-  -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   font-size: 18px;
@@ -209,13 +217,11 @@ code {
 }
 .button:hover {
   background: #2a81d7;
-  background: -moz-linear-gradient(0% 100% 90deg, #206bcb, #3e9ee5);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3e9ee5), to(#206bcb));
   border-top: 1px solid #2a73a6;
   border-right: 1px solid #165899;
   border-bottom: 1px solid #07428f;
   border-left: 1px solid #165899;
-  -moz-box-shadow: inset 0 1px 0 0 rgba(255,255,255,.3);
   -webkit-box-shadow: inset 0 1px 0 0 rgba(255,255,255,.3);
   cursor: pointer;
   text-shadow: 0 -1px 1px #1d62ab;
@@ -225,7 +231,6 @@ code {
   background: #3282d3;
   border: 1px solid #154c8c;
   border-bottom: 1px solid #0e408e;
-  -moz-box-shadow: inset 0 0 6px 3px rgba(255,255,255,.2), 0 1px 0 0 #fff;
   -webkit-box-shadow: inset 0 0 6px 3px rgba(255,255,255,.2), 0 1px 0 0 #fff;
   text-shadow: 0 -1px 1px #2361a4;
 }
@@ -240,7 +245,6 @@ code {
   border-left: 1px solid #cecece;
   color: #8f8f8f !important;
   box-shadow: none;
-  -moz-box-shadow: none;
   -webkit-box-shadow: none;
   cursor: not-allowed;
   text-shadow: 0 -1px 1px #ebebeb;

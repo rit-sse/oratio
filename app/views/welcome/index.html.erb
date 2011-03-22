@@ -5,8 +5,14 @@
 <div class="huge-list">
   <% @slideshows.each do |show| %>
     <div class="<%= cycle "odd", "" %>">
-      <div class="title"><%= show.name %></div>
+      <div class="title"><%= link_to show.name, slideshow_path(show) %></div>
       <div class="desc"><%= show.description %></div>
+      <% if signed_in? %>
+        <div class="edit-controls">
+          <%= link_to "Edit", edit_slideshow_path(show), :class => "medium button" %>
+          <%= link_to "Destroy", edit_slideshow_path(show), :class => "medium red button" %>
+        </div>
+      <% end %>
     </div>
   <% end%>
 </div>

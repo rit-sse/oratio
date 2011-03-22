@@ -13,21 +13,21 @@
 ActiveRecord::Schema.define(:version => 20110322204552) do
 
   create_table "allowed_users", :force => true do |t|
-    t.string   "name"
-    t.string   "username"
+    t.string   "name",       :null => false
+    t.string   "username",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "slide_types", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "slides", :force => true do |t|
     t.text     "content"
-    t.integer  "slide_type_id"
+    t.integer  "slide_type_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20110322204552) do
   create_table "slideshows", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.boolean  "visible",     :default => true
+    t.boolean  "visible",     :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

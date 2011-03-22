@@ -17,15 +17,18 @@
 
   <div id="outer-container">
     
+    <div id="current-login">
+      <% if signed_in? %>
+        Aloha, <%= current_user.name %>!<br />
+        <%= link_to "Sign Out", sign_out_path %>
+      <% else %>
+        You're not signed in, fool!<br />
+        <%= link_to "Sign In", sign_in_path %>
+      <% end %>
+    </div>
+    
     <h1 id="app_name"><%= link_to @app_name, root_path %></h1>
     <div id="inner-container">
-      
-      <% if signed_in? %>
-      <div id="current-login">
-        Welcome, <%= current_user.name %><br />
-        <%= link_to "Sign Out", "/auth/sign_out" %>
-      </div>
-      <% end %>
       
       <%= yield(:page_title) if content_for? :page_title %>
       <div id="main-content">

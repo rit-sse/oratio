@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def auth; request.env['omniauth.auth'] end
   
   def login_failure
-    redirect_to "/auth/ldap", :notice => "Invalid credentials."
+    redirect_to sign_in_path, :notice => "Invalid credentials."
   end
   
   def sign_out
