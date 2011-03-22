@@ -21,8 +21,8 @@ protected
   end
   
   def authorize!
-    unless self.signed_in?
-      session[:return_url] = request.uri
+    unless signed_in?
+      session[:return_url] = request.fullpath
       redirect_to "/auth/ldap", :notice => "You must sign in to continue."
     end
   end

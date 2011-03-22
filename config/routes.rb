@@ -1,5 +1,5 @@
 Oratio::Application.routes.draw do
-  
+
   resources :slide_types
   resources :slideshows do
     resources :slides
@@ -8,6 +8,9 @@ Oratio::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#callback'
   match '/auth/failure', :to => 'sessions#login_failure'
   match '/auth/sign_out', :to => 'sessions#sign_out'
+  
+  match '/diagnostics', :to => 'diagnostics#index'
+  match '/diagnostics/:action', :controller => 'diagnostics'
   
   root :to => "welcome#index"
   

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       # Log the authorizing user in.
       self.current_user = user
       
-      loc = (session[:return_url] ||= root_path)
+      loc = session[:return_url] || root_path
       session[:return_url] = nil
       
       redirect_to loc, :notice => "You have signed in successfully."
