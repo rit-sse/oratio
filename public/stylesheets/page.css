@@ -1,0 +1,19 @@
+/* tag styles */
+body {
+  background: url(../images/bg.png) repeat;
+}
+
+/* page element styles */
+#outer-container {
+  width: 980px;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+}
+
+#inner-container {
+  
+}
+
+#main-content {
+  
+}
