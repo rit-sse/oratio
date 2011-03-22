@@ -18,7 +18,8 @@ body {
   position: relative;
 }
 
-h1#page_title {
+h1#app_name {
+  font-family: "Lobster 13", cursive;
   padding: 0 0 0 15px;
   font-weight: bold;
   font-size: 2.5em;

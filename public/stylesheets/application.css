@@ -94,11 +94,7 @@ a:hover {
   color: #256026;
 }
 
-h1 {
-  font-family: "Lobster 13", cursive;
-  color: #000;
-}
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Liberation Sans", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
   color: #000;
 }
