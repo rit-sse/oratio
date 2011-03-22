@@ -22,8 +22,8 @@
       
       <% if signed_in? %>
       <div id="current-login">
-        Welcome<br />
-        <%= link_to "Sign Out", sign_out_path %>
+        Welcome, <%= current_user.name %><br />
+        <%= link_to "Sign Out", "/auth/sign_out" %>
       </div>
       <% end %>
       

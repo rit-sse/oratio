@@ -28,8 +28,8 @@ protected
   end
   
   def sign_out!
+    @current_user = nil
     session[:user_id] = nil
-    session[:return_url] = nil
     redirect_to root_path, :notice => "You have signed out successfully."
   end
 

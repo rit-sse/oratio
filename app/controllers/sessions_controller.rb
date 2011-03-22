@@ -6,8 +6,11 @@ class SessionsController < ApplicationController
     unless user.nil?
       # Log the authorizing user in.
       self.current_user = user
-
-      redirect_to (session[:return_url] ||= root_path), :notice => "You have signed in successfully."
+      
+      loc = (session[:return_url] ||= root_path)
+      session[:return_url] = nil
+      
+      redirect_to loc, :notice => "You have signed in successfully."
     else
       redirect_to root_path, :notice => "You're ugly, and we don't want you here."
     end

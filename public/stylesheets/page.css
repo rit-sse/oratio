@@ -18,6 +18,17 @@ body {
   position: relative;
 }
 
+#current-login {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  padding: 5px 7px;
+  background: #e3e3e3;
+  -webkit-border-radius: 7px;
+  border: 3px solid #fff;
+  text-align: right;
+}
+
 h1#app_name {
   font-family: "Lobster 13", cursive;
   padding: 0 0 0 15px;
