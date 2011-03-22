@@ -1,3 +1,95 @@
 /* YUI Reset v3.3.0, (c) 2010 Yahoo! Inc. */
 html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 
+/* fonts */
+@font-face {
+font-family: 'Liberation Sans';
+src: url('/fonts/LiberationSans-Bold-webfont.eot');
+src: local('☺'), url('/fonts/LiberationSans-Bold-webfont.woff') format('woff'), url('/fonts/LiberationSans-Bold-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-Bold-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: 'Liberation Sans';
+src: url('/fonts/LiberationSans-BoldItalic-webfont.eot');
+src: local('☺'), url('/fonts/LiberationSans-BoldItalic-webfont.woff') format('woff'), url('/fonts/LiberationSans-BoldItalic-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-BoldItalic-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 700;
+font-style: italic;
+}
+@font-face {
+font-family: 'Liberation Sans';
+src: url('/fonts/LiberationSans-Italic-webfont.eot');
+src: local('☺'), url('/fonts/LiberationSans-Italic-webfont.woff') format('woff'), url('/fonts/LiberationSans-Italic-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-Italic-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: italic;
+}
+@font-face {
+font-family: 'Liberation Sans';
+src: url('/fonts/LiberationSans-Regular-webfont.eot');
+src: local('☺'), url('/fonts/LiberationSans-Regular-webfont.woff') format('woff'), url('/fonts/LiberationSans-Regular-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Droid Serif';
+src: url('/fonts/DroidSerif-Bold-webfont.eot');
+src: local('☺'), url('/fonts/DroidSerif-Bold-webfont.woff') format('woff'), url('/fonts/DroidSerif-Bold-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Bold-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: 'Droid Serif';
+src: url('/fonts/DroidSerif-BoldItalic-webfont.eot');
+src: local('☺'), url('/fonts/DroidSerif-BoldItalic-webfont.woff') format('woff'), url('/fonts/DroidSerif-BoldItalic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-BoldItalic-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 700;
+font-style: italic;
+}
+@font-face {
+font-family: 'Droid Serif';
+src: url('/fonts/DroidSerif-Italic-webfont.eot');
+src: local('☺'), url('/fonts/DroidSerif-Italic-webfont.woff') format('woff'), url('/fonts/DroidSerif-Italic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Italic-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: italic;
+}
+@font-face {
+font-family: 'Droid Serif';
+src: url('/fonts/DroidSerif-Regular-webfont.eot');
+src: local('☺'), url('/fonts/DroidSerif-Regular-webfont.woff') format('woff'), url('/fonts/DroidSerif-Regular-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Lobster 13';
+src: url('/fonts/Lobster_1.3-webfont.eot');
+src: local('☺'), url('/fonts/Lobster_1.3-webfont.woff') format('woff'), url('/fonts/Lobster_1.3-webfont.ttf') format('truetype'), url('/fonts/Lobster_1.3-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Andale Mono';
+src: url('/fonts/AndaleMono-webfont.eot');
+src: local('☺'), url('/fonts/AndaleMono-webfont.woff') format('woff'), url('/fonts/AndaleMono-webfont.ttf') format('truetype'), url('/fonts/AndaleMono-webfont.svg#webfontX4pGz9fc') format('svg');
+font-weight: 400;
+font-style: normal;
+}
+
+/* tag styles */
+body {
+  font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino", "Hoefler Text", "Baskerville", serif;
+  font-size: 0.985em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Liberation Sans", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+}
+
+pre, code {
+  font-family: "Andale Mono", "Menlo", "Courier New", "Courier", "Mono", monospace;
+  font-size: 1.037em;
+}
+
+/* classes */
+.special-text { font-family: "Lobster 13", cursive; font-size: 1.008em; }

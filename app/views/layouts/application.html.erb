@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>Oratio</title>
-  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'application', 'page' %>
   <%= javascript_include_tag 'jquery', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <div id="outer-container">
+    
+    <div id="inner-container">
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+    
+  </div>
 
 </body>
 </html>
