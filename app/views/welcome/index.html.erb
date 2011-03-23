@@ -10,7 +10,7 @@
       <% if signed_in? %>
         <div class="edit-controls">
           <%= link_to "Edit", edit_slideshow_path(show), :class => "medium button" %>
-          <%= link_to "Destroy", edit_slideshow_path(show), :class => "medium red button" %>
+          <%= link_to "Destroy", show, :class => "medium red button", :confirm => "Are you sure?", :method => :delete %>
         </div>
       <% end %>
     </div>
