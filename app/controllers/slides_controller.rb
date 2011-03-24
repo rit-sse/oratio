@@ -79,7 +79,7 @@ class SlidesController < ApplicationController
     @slide.destroy
 
     respond_to do |format|
-      format.html { redirect_to(slideshow_slides_path) }
+      format.html { redirect_to(slideshow_slides_path, :notice => 'Slide was successfully destroyed.') }
       format.xml  { head :ok }
     end
   end

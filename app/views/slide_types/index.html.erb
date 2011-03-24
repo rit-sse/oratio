@@ -1,23 +1,22 @@
-<h1>Listing slide_types</h1>
+<% title "Listing slide types" %>
+
+<% actions do %>
+  <%= link_to 'New Slide type', new_slide_type_path, :class => "medium button" %>
+<% end %>
 
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @slide_types.each do |slide_type| %>
   <tr>
     <td><%= slide_type.name %></td>
-    <td><%= link_to 'Show', slide_type %></td>
-    <td><%= link_to 'Edit', edit_slide_type_path(slide_type) %></td>
-    <td><%= link_to 'Destroy', slide_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="actions">
+      <%= link_to 'Edit', edit_slide_type_path(slide_type), :class => "button" %>
+      <%= link_to 'Destroy', slide_type, :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Slide type', new_slide_type_path %>

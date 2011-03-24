@@ -48,7 +48,7 @@ class SlideshowsController < ApplicationController
 
     respond_to do |format|
       if @slideshow.save
-        format.html { redirect_to(@slideshow, :notice => 'Slideshow was successfully created.') }
+        format.html { redirect_to(slideshows_path, :notice => 'Slideshow was successfully created.') }
         format.xml  { render :xml => @slideshow, :status => :created, :location => @slideshow }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class SlideshowsController < ApplicationController
 
     respond_to do |format|
       if @slideshow.update_attributes(params[:slideshow])
-        format.html { redirect_to(@slideshow, :notice => 'Slideshow was successfully updated.') }
+        format.html { redirect_to(slideshows_path, :notice => 'Slideshow was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -80,7 +80,7 @@ class SlideshowsController < ApplicationController
     @slideshow.destroy
 
     respond_to do |format|
-      format.html { redirect_to(slideshows_url) }
+      format.html { redirect_to(slideshows_path, :notice => 'Slideshow was successfully destroyed.') }
       format.xml  { head :ok }
     end
   end

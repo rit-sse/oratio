@@ -44,7 +44,7 @@ class SlideTypesController < ApplicationController
 
     respond_to do |format|
       if @slide_type.save
-        format.html { redirect_to(@slide_type, :notice => 'Slide type was successfully created.') }
+        format.html { redirect_to(slide_types_path, :notice => 'Slide type was successfully created.') }
         format.xml  { render :xml => @slide_type, :status => :created, :location => @slide_type }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class SlideTypesController < ApplicationController
 
     respond_to do |format|
       if @slide_type.update_attributes(params[:slide_type])
-        format.html { redirect_to(@slide_type, :notice => 'Slide type was successfully updated.') }
+        format.html { redirect_to(slide_types_path, :notice => 'Slide type was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class SlideTypesController < ApplicationController
     @slide_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to(slide_types_url) }
+      format.html { redirect_to(slide_types_path, :notice => 'Slide type was successfully destroyed.') }
       format.xml  { head :ok }
     end
   end
