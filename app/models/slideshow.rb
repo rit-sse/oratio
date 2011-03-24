@@ -6,7 +6,7 @@
 #  id          :integer         not null, primary key
 #  name        :string(255)
 #  description :string(255)
-#  visible     :boolean         default(TRUE)
+#  visible     :boolean         default(TRUE), not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #

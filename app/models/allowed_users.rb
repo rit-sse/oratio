@@ -4,8 +4,8 @@
 # Table name: allowed_users
 #
 #  id         :integer         not null, primary key
-#  name       :string(255)
-#  username   :string(255)
+#  name       :string(255)     not null
+#  username   :string(255)     not null
 #  created_at :datetime
 #  updated_at :datetime
 #

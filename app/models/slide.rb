@@ -5,7 +5,8 @@
 #
 #  id            :integer         not null, primary key
 #  content       :text
-#  slide_type_id :integer
+#  slide_type_id :integer         not null
+#  slideshow_id  :integer         not null
 #  created_at    :datetime
 #  updated_at    :datetime
 #
