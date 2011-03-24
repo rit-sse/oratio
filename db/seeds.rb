@@ -34,3 +34,12 @@ unless Slideshow.count > 0
     }
     ])
 end
+
+unless SlideType.count > 0
+  SlideType.create([
+    { :name => "Default" },
+    { :name => "Calendar" },
+    { :name => "Photos" },
+    { :name => "RSS Feed" }
+    ])
+end

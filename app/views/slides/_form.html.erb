@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.label :slide_type %><br />
-    <%= f.text_field :slide_type %>
+    <%= f.select :slide_type_id, SlideType.all.collect { |type| [type.name, type.id] } %>
   </div>
   <div class="actions">
     <%= f.submit nil, :class => "medium button" %>

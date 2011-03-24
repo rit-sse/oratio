@@ -43,11 +43,12 @@ class SlidesController < ApplicationController
   # POST /slides.xml
   def create
     @slide = Slide.new(params[:slide])
+    @slide.slideshow = @slideshow
 
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to(@slide, :notice => 'Slide was successfully created.') }
-        format.xml  { render :xml => @slide, :status => :created, :location => @slide }
+        format.html { redirect_to([@slideshow, @slide], :notice => 'Slide was successfully created.') }
+        format.xml  { render :xml => [@slideshow, @slide], :status => :created, :location => @slide }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @slide.errors, :status => :unprocessable_entity }
@@ -78,7 +79,7 @@ class SlidesController < ApplicationController
     @slide.destroy
 
     respond_to do |format|
-      format.html { redirect_to(slides_url) }
+      format.html { redirect_to(slideshow_slides_path) }
       format.xml  { head :ok }
     end
   end

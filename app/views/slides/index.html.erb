@@ -1,4 +1,4 @@
-<% title "#{@slideshow.name} slides" %>
+<% title "Slides for #{@slideshow.name}" %>
 
 <% actions do %>
   <%= link_to 'New Slide', new_slideshow_slide_path, :class => "medium button" %>
@@ -6,20 +6,21 @@
 
 <table>
   <tr>
+    <th>Title</th>
     <th>Content</th>
     <th>Slide type</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @slides.each do |slide| %>
-  <tr>
+  <tr class="<%= cycle "odd", "even" %>">
+    <td><%= link_to slide.title, [@slideshow, slide] %></td>
     <td><%= slide.content %></td>
-    <td><%= slide.slide_type %></td>
-    <td><%= link_to 'Show', slide %></td>
-    <td><%= link_to 'Edit', edit_slideshow_slide_path(slide) %></td>
-    <td><%= link_to 'Destroy', slide, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= slide.slide_type.name %></td>
+    <td class="actions">
+      <%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, slide), :class => "button" %>
+      <%= link_to 'Destroy', [@slideshow, slide], :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

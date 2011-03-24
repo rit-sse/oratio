@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110322204552) do
   end
 
   create_table "slides", :force => true do |t|
+    t.string   "title",         :null => false
     t.text     "content"
     t.integer  "slide_type_id", :null => false
     t.integer  "slideshow_id",  :null => false

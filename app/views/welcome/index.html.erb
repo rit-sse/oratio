@@ -8,7 +8,7 @@
 
 <div class="huge-list">
   <% @slideshows.each do |show| %>
-    <div class="<%= cycle "odd", "" %>">
+    <div class="<%= cycle "odd", "even" %>">
       <div class="title"><%= link_to show.name, show %></div>
       <div class="desc"><%= show.description %></div>
       <% if signed_in? %>

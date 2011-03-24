@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <b>Title:</b>
+  <%= @slide.title %>
+</p>
 
 <p>
   <b>Content:</b>
@@ -7,9 +10,9 @@
 
 <p>
   <b>Slide type:</b>
-  <%= @slide.slide_type %>
+  <%= @slide.slide_type.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_slide_path(@slide) %> |
-<%= link_to 'Back', slides_path %>
+<%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, @slide) %> |
+<%= link_to 'Back', slideshow_slides_path %>
