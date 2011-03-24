@@ -21,6 +21,16 @@ body {
   text-align: right;
 }
 
+h1#app-name {
+  font-family: "Lobster 13", cursive;
+  padding: 0 0 0 15px;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+h1#app-name a {
+  color: #000;
+}
+
 #inner-container {
   margin: 10px 0;
   padding: 15px;
@@ -29,14 +39,13 @@ body {
   position: relative;
 }
 
-h1#app_name {
-  font-family: "Lobster 13", cursive;
-  padding: 0 0 0 15px;
-  font-weight: bold;
-  font-size: 2.5em;
+h1#page-title {
+  float: left;
 }
-h1#app_name a {
-  color: #000;
+
+div#actions {
+  float: right;
+  padding: 1px 0 0;
 }
 
 #main-content {

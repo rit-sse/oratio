@@ -1,16 +1,20 @@
 <% title "Slideshows" %>
 
+<% actions do %>
+  <%= link_to 'New Slideshow', new_slideshow_path, :class => "medium button" %>
+<% end %>
+
 <p>Please select a slideshow to view from the list below.</p>
 
 <div class="huge-list">
   <% @slideshows.each do |show| %>
     <div class="<%= cycle "odd", "" %>">
-      <div class="title"><%= link_to show.name, slideshow_path(show) %></div>
+      <div class="title"><%= link_to show.name, show %></div>
       <div class="desc"><%= show.description %></div>
       <% if signed_in? %>
         <div class="edit-controls">
-          <%= link_to "Edit", edit_slideshow_path(show), :class => "medium button" %>
-          <%= link_to "Destroy", show, :class => "medium red button", :confirm => "Are you sure?", :method => :delete %>
+          <%= link_to "Edit", edit_slideshow_path(show), :class => "button" %>
+          <%= link_to "Destroy", show, :class => "red button", :confirm => "Are you sure?", :method => :delete %>
         </div>
       <% end %>
     </div>

@@ -115,7 +115,16 @@ code {
   padding: 10px;
 }
 
+/* form styles */
+input[type=text], input[type=password], textarea { display: block; background: #fff url(../images/input-bg.png) no-repeat 0 0; padding: 3px 5px; margin: 0 0 10px 0; border: 1px solid #bbb; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font: 13px/18px Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif; text-shadow: 0 0 1px #fff; color: #666; }
+select:focus, input[type=text]:focus, input[type=password]:focus, textarea:focus { outline: none; }
+input[type=text]:focus, input[type=password]:focus, textarea:focus { border: 1px dashed #333; color: #333; }
+textarea { width: 550px; height: 250px; }
+select { display: inline-block; margin-top: 6px; }
+
 /* classes */
+.clear { clear: both; }
+
 .special-text { font-family: "Lobster 13", cursive; font-size: 1.008em; }
 
 /* ui widgets */

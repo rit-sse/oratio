@@ -27,10 +27,17 @@
       <% end %>
     </div>
     
-    <h1 id="app_name"><%= link_to @app_name, root_path %></h1>
+    <h1 id="app-name"><%= link_to @app_name, root_path %></h1>
     <div id="inner-container">
       
       <%= yield(:page_title) if content_for? :page_title %>
+      <% if content_for? :actions %>
+        <div id="actions">
+          <%= yield :actions %>
+        </div>
+      <% end %>
+      <%= clear %>
+      
       <div id="main-content">
         <% unless flash.nil? %>
           <% flash.each do |f, m| %>
