@@ -17,13 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :visible %><br />
     <%= f.check_box :visible %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => "medium button" %>
   </div>
 <% end %>

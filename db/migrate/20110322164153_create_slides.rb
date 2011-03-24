@@ -3,6 +3,7 @@ class CreateSlides < ActiveRecord::Migration
     create_table :slides do |t|
       t.text :content
       t.references :slide_type, :null => false
+      t.references :slideshow, :null => false
 
       t.timestamps
     end

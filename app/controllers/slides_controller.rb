@@ -1,4 +1,6 @@
 class SlidesController < ApplicationController
+  before_filter :get_slideshow
+  
   # GET /slides
   # GET /slides.xml
   def index
@@ -79,5 +81,11 @@ class SlidesController < ApplicationController
       format.html { redirect_to(slides_url) }
       format.xml  { head :ok }
     end
+  end
+  
+protected
+  
+  def get_slideshow
+    @slideshow = Slideshow.find_by_id(params[:slideshow_id])
   end
 end

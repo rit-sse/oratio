@@ -19,7 +19,7 @@
     
     <div id="current-login">
       <% if signed_in? %>
-        Aloha, <%= current_user.name %>!<br />
+        <%= random_hello %>, <%= current_user.name %>!<br />
         <%= link_to "Sign Out", sign_out_path %>
       <% else %>
         You're not signed in, fool!<br />

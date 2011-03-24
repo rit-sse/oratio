@@ -1,4 +1,8 @@
-<h1>Listing slides</h1>
+<% title "#{@slideshow.name} slides" %>
+
+<% actions do %>
+  <%= link_to 'New Slide', new_slideshow_slide_path, :class => "medium button" %>
+<% end %>
 
 <table>
   <tr>
@@ -14,12 +18,8 @@
     <td><%= slide.content %></td>
     <td><%= slide.slide_type %></td>
     <td><%= link_to 'Show', slide %></td>
-    <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
+    <td><%= link_to 'Edit', edit_slideshow_slide_path(slide) %></td>
     <td><%= link_to 'Destroy', slide, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Slide', new_slide_path %>

@@ -1,4 +1,8 @@
-<h1>Editing slideshow</h1>
+<% title "Editing slideshow" %>
+
+<% actions do %>
+  <%= link_to "Edit Slides", slideshow_slides_path(@slideshow), :class => "medium button" %>
+<% end %>
 
 <%= render 'form' %>
 
