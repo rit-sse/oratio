@@ -1,5 +1,7 @@
 Oratio::Application.routes.draw do
 
+  resources :configurations
+
   resources :slide_types
   resources :slideshows do
     resources :slides
@@ -11,6 +13,8 @@ Oratio::Application.routes.draw do
   
   match '/diagnostics', :to => 'diagnostics#index'
   match '/diagnostics/:action', :controller => 'diagnostics'
+
+  match '/config/:action', :controller => 'configurations'
   
   root :to => "welcome#index"
   
