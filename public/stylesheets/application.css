@@ -119,16 +119,22 @@ code {
 table {
   width: 100%;
 }
+table.sortable, table.sortable tr {
+  width: 100%;
+}
 th {
   font-weight: bold;
-  padding: 5px;
+  padding: 4px;
 }
 td {
-  padding: 5px;
-  border: 1px solid #bbb;
+  padding: 4px;
+  border-color: #bbb;
 }
-td.actions {
-  text-align: right;
+tbody tr:nth-child(odd) {
+  background: #e3e3e3;
+}
+tbody tr:nth-child(odd):hover, tbody tr:nth-child(even):hover {
+  background: #ffddde;
 }
 
 /* form styles */
@@ -164,20 +170,24 @@ form div.actions { margin: 10px 0 0; }
   border: 1px solid #893b3b;
 }
 
-.odd {
-  background: #e3e3e3;
-}
-.odd:hover, .even:hover {
-  background: #ffddde;
-}
-
 .huge-list {
 }
 .huge-list > div {
   padding: 7px;
 }
+.huge-list > div:nth-child(odd) {
+  background: #e3e3e3;
+}
+.huge-list > div:nth-child(odd):hover, .huge-list > div:nth-child(even):hover {
+  background: #ffddde;
+}
 .huge-list > div .title {
   font-size: 2.4em;
+}
+
+td.actions {
+  width: 1px;
+  white-space: nowrap;
 }
 
 .edit-controls {

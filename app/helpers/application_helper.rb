@@ -43,4 +43,14 @@ module ApplicationHelper
     hellos[rand(hellos.size)].capitalize
   end
   
+  def add_javascript(script)
+    @javascripts = [] if @javascripts.nil?
+    @javascripts += [script]
+  end
+  
+  def add_stylesheet(stylesheet)
+    @stylesheets = [] if @stylesheets.nil?
+    @stylesheets += [stylesheet]
+  end
+  
 end

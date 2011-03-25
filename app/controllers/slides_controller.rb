@@ -1,10 +1,10 @@
 class SlidesController < ApplicationController
-  before_filter :get_slideshow
+  before_filter :get_slideshow, :authorize!
   
   # GET /slides
   # GET /slides.xml
   def index
-    @slides = Slide.all
+    @slides = @slideshow.slides
 
     respond_to do |format|
       format.html # index.html.erb
