@@ -26,42 +26,6 @@ src: local('☺'), url('/fonts/LiberationSans-Italic-webfont.woff') format('woff
 font-weight: 400;
 font-style: italic;
 }
-@font-face {
-font-family: 'Liberation Sans';
-src: url('/fonts/LiberationSans-Regular-webfont.eot');
-src: local('☺'), url('/fonts/LiberationSans-Regular-webfont.woff') format('woff'), url('/fonts/LiberationSans-Regular-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: normal;
-}
-
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Bold-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Bold-webfont.woff') format('woff'), url('/fonts/DroidSerif-Bold-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Bold-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 700;
-font-style: normal;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-BoldItalic-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-BoldItalic-webfont.woff') format('woff'), url('/fonts/DroidSerif-BoldItalic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-BoldItalic-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 700;
-font-style: italic;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Italic-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Italic-webfont.woff') format('woff'), url('/fonts/DroidSerif-Italic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Italic-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: italic;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Regular-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Regular-webfont.woff') format('woff'), url('/fonts/DroidSerif-Regular-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: normal;
-}
 
 @font-face {
 font-family: 'Lobster 13';
@@ -81,17 +45,17 @@ font-style: normal;
 
 /* tag styles */
 body {
-  font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino", "Hoefler Text", "Baskerville", serif;
-  font-size: 0.985em;
+  font: normal normal normal 14px/18px 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+  font-size: 0.92em; /*0.985em;*/
   color: #444;
 }
 
 a {
-  color: #338435;
+  color: #283f73;
   text-decoration: none;
 }
 a:hover {
-  color: #256026;
+  color: #121c33;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -131,12 +95,6 @@ td {
   padding: 4px;
   border-top: 1px solid #bbb;
 }
-/*tbody tr:nth-child(even) {
-  background: #fff;
-}
-tbody tr:nth-child(odd) {
-  background: #e3e3e3;
-}*/
 tbody tr {
   background: #fff;
 }
@@ -183,13 +141,7 @@ form div.actions { margin: 10px 0 0; }
   border-top: 1px solid #bbb;
   padding: 7px;
 }
-/*.huge-list > div:nth-child(odd) {
-  background: #fff;
-}
-.huge-list > div:nth-child(odd) {
-  background: #e3e3e3;
-}*/
-.huge-list > div:nth-child(odd):hover, .huge-list > div:nth-child(even):hover {
+.huge-list > div:hover, .huge-list > div:hover {
   background: #ffddde;
 }
 .huge-list > div .title {
