@@ -33,6 +33,7 @@ h1#app-name a {
   padding: 15px;
   background: #fff;
   -webkit-border-radius: 7px;
+  -webkit-box-shadow: 0 0 6px 1px rgba(0,0,0,.2);
   position: relative;
 }
 
