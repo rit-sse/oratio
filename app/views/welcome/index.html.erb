@@ -1,7 +1,9 @@
 <% title "Slideshows" %>
 
 <% actions do %>
-  <%= link_to 'New Slideshow', new_slideshow_path, :class => "medium button" %>
+  <% if signed_in? %>
+    <%= link_to 'New Slideshow', new_slideshow_path, :class => "medium button" %>
+  <% end %>
 <% end %>
 
 <p>Please select a slideshow to view from the list below.</p>
