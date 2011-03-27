@@ -12,12 +12,9 @@ body {
 
 #current-login {
   position: absolute;
-  top: -13px;
+  top: -5px;
   right: 0;
-  padding: 5px 7px;
-  background: #e3e3e3;
-  -webkit-border-radius: 7px;
-  border: 3px solid #fff;
+  padding: 0 15px;
   text-align: right;
 }
 

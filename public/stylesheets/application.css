@@ -131,13 +131,16 @@ td {
   padding: 4px;
   border-top: 1px solid #bbb;
 }
-tbody tr:nth-child(even) {
+/*tbody tr:nth-child(even) {
   background: #fff;
 }
 tbody tr:nth-child(odd) {
   background: #e3e3e3;
+}*/
+tbody tr {
+  background: #fff;
 }
-tbody tr:nth-child(odd):hover, tbody tr:nth-child(even):hover {
+tbody tr:hover {
   background: #ffddde;
 }
 
@@ -180,12 +183,12 @@ form div.actions { margin: 10px 0 0; }
   border-top: 1px solid #bbb;
   padding: 7px;
 }
-.huge-list > div:nth-child(odd) {
+/*.huge-list > div:nth-child(odd) {
   background: #fff;
 }
 .huge-list > div:nth-child(odd) {
   background: #e3e3e3;
-}
+}*/
 .huge-list > div:nth-child(odd):hover, .huge-list > div:nth-child(even):hover {
   background: #ffddde;
 }
