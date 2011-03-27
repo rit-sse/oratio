@@ -82,7 +82,7 @@ code {
 /* tables */
 table {
   width: 100%;
-  background: #888;
+  background: #ddd;
 }
 table.sortable, table.sortable tr {
   width: 100%;
@@ -145,7 +145,7 @@ form div.actions { margin: 10px 0 0; }
   background: #ffddde;
 }
 .huge-list > div .title {
-  font-size: 2.4em;
+  font-size: 2.1em;
 }
 
 td.actions {
@@ -156,8 +156,6 @@ td.actions {
 .edit-controls {
   font-size: 0.8em;
   padding: 10px 0 3px;
-  margin: 10px 0 0;
-  border-top: 1px dashed #bbb;
 }
 .edit-controls a {
   display: inline-block;
