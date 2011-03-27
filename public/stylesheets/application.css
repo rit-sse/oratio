@@ -118,6 +118,7 @@ code {
 /* tables */
 table {
   width: 100%;
+  background: #888;
 }
 table.sortable, table.sortable tr {
   width: 100%;
@@ -128,7 +129,10 @@ th {
 }
 td {
   padding: 4px;
-  border-color: #bbb;
+  border-top: 1px solid #bbb;
+}
+tbody tr:nth-child(even) {
+  background: #fff;
 }
 tbody tr:nth-child(odd) {
   background: #e3e3e3;
@@ -173,7 +177,11 @@ form div.actions { margin: 10px 0 0; }
 .huge-list {
 }
 .huge-list > div {
+  border-top: 1px solid #bbb;
   padding: 7px;
+}
+.huge-list > div:nth-child(odd) {
+  background: #fff;
 }
 .huge-list > div:nth-child(odd) {
   background: #e3e3e3;
