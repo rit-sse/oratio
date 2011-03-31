@@ -1,0 +1,15 @@
+.slide.nochrome {
+    border: 0;
+    background: 0;
+}
+
+.sse-logo {
+  width: 75px !important;
+  height: 75px !important;
+}
+
+/* slide styles */
+
+.hcenter {
+  text-align: center;
+}

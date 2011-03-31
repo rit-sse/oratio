@@ -1,20 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% title @slideshow.name %>
 
-<p>
-  <b>Name:</b>
-  <%= @slideshow.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @slideshow.description %>
-</p>
-
-<p>
-  <b>Visible:</b>
-  <%= @slideshow.visible %>
-</p>
-
-
-<%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
-<%= link_to 'Back', slideshows_path %>
+<% @slideshow.slides.each do |slide| %>
+  <div class="slide">
+    <h1><%= slide.title %></h1>
+    <%= slide.content.html_safe %>
+  </div>
+<% end %>

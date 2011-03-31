@@ -9,7 +9,7 @@
     <% @slides.each do |slide| %>
       <tr id="<%= slide.id %>">
         <td>
-          <%= link_to slide.title, [@slideshow, slide] %>
+          <%= slide.title %>
         </td>
         <td class="actions">
           <%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, slide), :class => "button" %>

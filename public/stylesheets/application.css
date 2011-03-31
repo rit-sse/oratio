@@ -103,10 +103,10 @@ tbody tr:hover {
 }
 
 /* form styles */
-input[type=text], input[type=password], textarea { display: block; background: #fff url(../images/input-bg.png) no-repeat 0 0; padding: 3px 5px; margin: 0 0 10px 0; border: 1px solid #bbb; -webkit-border-radius: 3px; font: 13px/18px "Liberation Sans", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; text-shadow: 0 0 1px #fff; color: #666; }
+input[type=text], input[type=password], textarea { display: block; background: #fff url(../images/input-bg.png) no-repeat 0 0; padding: 3px 5px; margin: 0 0 10px 0; border: 1px solid #bbb; -webkit-border-radius: 3px; font: 13px/18px "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; text-shadow: 0 0 1px #fff; color: #666; }
 select:focus, input[type=text]:focus, input[type=password]:focus, textarea:focus { outline: none; }
 input[type=text]:focus, input[type=password]:focus, textarea:focus { border: 1px dashed #333; color: #333; }
-textarea { width: 500px; height: 200px; }
+textarea { width: 500px; height: 200px; font: 13px/18px 'Andale Mono'; letter-spacing: -1px; }
 select { display: inline-block; margin-top: 6px; }
 
 form { margin: 0 0 15px; }
