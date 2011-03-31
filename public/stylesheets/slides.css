@@ -10,6 +10,11 @@
 
 /* slide styles */
 
+.slide {
+/*  border: 1px solid #ccc;
+  background: #fff;*/
+}
+
 .hcenter {
   text-align: center;
 }

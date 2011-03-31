@@ -76,11 +76,11 @@
 
             if (winW > winH * options.ratio) {
                 smallestDimension = winH;
-                slideH = winH - winH * 0.15;
+                slideH = winH - winH * 0.05;
                 slideW = slideH * options.ratio;
             } else {
                 smallestDimension = winW / options.ratio;
-                slideW = winW - winW * 0.15;
+                slideW = winW - winW * 0.05;
                 slideH = slideW / options.ratio;
             }
         };
@@ -390,7 +390,7 @@
             animOutForward: animOutForward,
             animOutRewind: animOutRewind,
             // width/height ratio of the slides, defaults to 1.3 (620x476)
-            ratio: 1.3
+            ratio: 1.777777778
         };
 
         options = $.extend(defaults, settings);
