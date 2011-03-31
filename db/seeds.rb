@@ -43,3 +43,11 @@ unless SlideType.count > 0
     { :name => "RSS Feed" }
     ])
 end
+
+# unless Slide.count > 0
+#   Slideshow.all.each do |slideshow|
+#     Slide.create([
+#       { :title => "Slide 1", :slideshow_id => slideshow.id, :content => '<h2 class="hcenter vcenter">testing</h2>' }
+#       ])
+#   end
+# end
