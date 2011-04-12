@@ -9,6 +9,7 @@
 unless AllowedUsers.count > 0
   AllowedUsers.create([
     { :name => "Cody Krieger", :username => "cjk7752" },
+    { :name => "Brian Wyant", :username => "bmw8952" },
     { :name => "Brian To", :username => "bxt5647" },
     { :name => "Danjo", :username => "dgj7531" }
     ])
