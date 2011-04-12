@@ -38,6 +38,10 @@ module ApplicationHelper
       "moin moin",
       "privet",
       "hola",
+      "こんにちは",
+      "hallo",
+      "barev",
+      "namaskar",
       ]
     
     hellos[rand(hellos.size)].capitalize
