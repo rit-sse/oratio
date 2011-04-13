@@ -5,5 +5,21 @@
 <p>The options available for configuration.</p>
 
 <div class="settings-list">
-  <div class="settings-title">Default Timeout</div>
+  <div class="setting-title">Default Timeout:</div>
+  <div class="setting-desc"><%= @settings.def_timeout %></div>
+
+  <div class="setting-title">Allowed Users:</div>
+  <div class="all-users">
+    <% @users.each do |user| %>
+       <div class="user-display">
+         <%= user.name %>
+         <%= user.username %>
+       </div>
+    <% end %>
+  </div>
+
+  <div class="add-user">
+
+  </div>
+  
 </div>

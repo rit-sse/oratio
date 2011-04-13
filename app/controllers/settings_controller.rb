@@ -4,6 +4,9 @@ class SettingsController < ApplicationController
   # GET /settings
   # GET /settings.xml
   def index
+    @users ||= AllowedUsers.all
+    @settings ||= Settings.load
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @slides }
