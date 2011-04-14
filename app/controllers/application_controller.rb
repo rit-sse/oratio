@@ -17,6 +17,7 @@ protected
   def sign_out_path; "/auth/sign_out"; end
 
   def settings_path; "/settings"; end
+  def settings_index_path; "/settings"; end
 
   helper_method :current_user, :signed_in?, :sign_in_path, :sign_out_path, :settings_path
 

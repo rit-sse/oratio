@@ -13,7 +13,8 @@ Oratio::Application.routes.draw do
   match '/diagnostics/:action', :controller => 'diagnostics'
 
   match '/settings', :to => 'settings#index'
-  
+  match '/settings/:action', :controller => 'settings'
+ 
   root :to => "welcome#index"
   
   # See how all your routes lay out with "rake routes"

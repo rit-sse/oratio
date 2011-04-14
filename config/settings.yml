@@ -1,2 +1,2 @@
 --- !ruby/object:Settings 
-default_timeout: 5
+default_timeout: 3

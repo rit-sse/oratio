@@ -5,10 +5,8 @@
 <p>The options available for configuration.</p>
 
 <div class="settings-list">
-  <div class="setting-title">Default Timeout:</div>
-  <div class="setting-desc"><%= @settings.default_timeout %></div>
+  <%= render "form" %>
 
-  <div class="setting-title">Allowed Users:</div>
   <div class="all-users">
     <% @users.each do |user| %>
        <div class="user-display">
@@ -25,3 +23,7 @@
   </div>
   
 </div>
+  <div class="setting-title">Default Timeout:</div>
+  <div class="setting-desc"><%= @settings.default_timeout %></div>
+
+  <div class="setting-title">Allowed Users:</div>

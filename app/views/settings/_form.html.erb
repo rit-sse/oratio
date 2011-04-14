@@ -1,0 +1,9 @@
+<%= form_for(@settings, :url => { :action => :edit }) do |f| %>
+  <div class="field">
+    <%= f.label :default_timeout %><br />
+    <%= f.text_field :default_timeout %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, :class => "small button" %>
+  </div>
+<% end %>
