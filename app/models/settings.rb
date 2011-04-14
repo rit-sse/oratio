@@ -2,26 +2,16 @@ require 'yaml'
 
 class Settings
 
-  attr_accessor :def_timeout
-
-  def initialize(path)
-    @path = path
-
-    @loadedYml = YAML::load( File.open(path) )
-
-    puts @loadedYml['default_timeout']
-
-    @def_timeout = Integer(@loadedYml.fetch('default_timeout'))
-  end
+  attr_accessor :default_timeout
 
   def save()
-    filedump = File.open(@path, 'w')
-    YAML::dump( @loadedYml, filedump )
+    filedump = File.open("config/settings.yml", 'w')
+    YAML::dump( self, filedump )
     filedump.close()
   end
 
   def Settings.load()
-    Settings.new("config/settings.yml")
+    YAML::load( File.open("config/settings.yml") )
   end
 
 end

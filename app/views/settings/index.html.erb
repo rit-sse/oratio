@@ -6,14 +6,16 @@
 
 <div class="settings-list">
   <div class="setting-title">Default Timeout:</div>
-  <div class="setting-desc"><%= @settings.def_timeout %></div>
+  <div class="setting-desc"><%= @settings.default_timeout %></div>
 
   <div class="setting-title">Allowed Users:</div>
   <div class="all-users">
     <% @users.each do |user| %>
        <div class="user-display">
-         <%= user.name %>
-         <%= user.username %>
+         <div class="user-title"><%= user.name %></div>
+         <div class="user-desc"><%= user.username %></div>
+         <div class="user-controls">
+         </div>
        </div>
     <% end %>
   </div>
