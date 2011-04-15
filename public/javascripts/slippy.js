@@ -12,6 +12,11 @@
  */
 "use strict";
 
+var slippyTimerId = null;
+var origTimeout = null;
+var currentTimeout = null;
+var newTimeout = null;
+
 // Slide deck module
 (function($) {
     var slides, curSlide, options, inOverview,
@@ -177,20 +182,43 @@
     };
     
     /**
+     * Timed Slideshower! Do a barrel roll!
+     */
+    resetTimedSlideshower = function() {
+      if (slippyTimerId == null) return;
+      
+      // clearInterval(slippyTimerId);
+      // slippyTimerId = setInterval(timedSlideshower, newTimeout);
+    };
+
+    timedSlideshower = function() {
+      console.log("ZOMG");
+      nextSlide();
+      
+      if (currentTimeout != newTimeout) {
+        currentTimeout = newTimeout;
+        resetTimedSlideshower();
+      }
+    };
+    
+    /**
      * Navigation
      */
     keyboardNav = (function() {
         var targetSlide = null, switcher, timeout,
             // methods
             cleanNav;
-
+        
         cleanNav = function() {
             clearTimeout(timeout);
             targetSlide = null;
             switcher.remove();
             switcher = null;
         };
-
+        
+        // prevent timer from kicking in too quickly
+        resetTimedSlideshower();
+        
         return function(e) {
             if (e.altKey || e.ctrlKey || inOverview) { return; }
 
@@ -290,7 +318,10 @@
 
     clickNav = (function() {
         var timeout, armed = false;
-
+        
+        // prevent timer from kicking in too quickly
+        resetTimedSlideshower();
+        
         return function(e) {
             if (e.target.nodeName === 'A') { return; }
             clearTimeout(timeout);
@@ -395,7 +426,8 @@
             animOutForward: animOutForward,
             animOutRewind: animOutRewind,
             // width/height ratio of the slides, defaults to 1.3 (620x476)
-            ratio: 1.777777778
+            ratio: 1.777777778,
+            timeOut: null
         };
 
         options = $.extend(defaults, settings);
@@ -433,7 +465,12 @@
             nextSlide();
         }
         
-        
+        if (options.timeOut != null) {
+          origTimeout = options.timeOut;
+          currentTimeout = options.timeOut;
+          newTimeout = options.timeOut;
+          slippyTimerId = setInterval(timedSlideshower, options.timeOut);
+        }
     };
 }(jQuery));
 
