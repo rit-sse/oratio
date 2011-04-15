@@ -267,6 +267,7 @@ var newTimeout = null;
                 }
                 break;
             
+            // handle pausing the slideshow
             case 80:
                 togglePauseTimedSlideshower();
                 break;
