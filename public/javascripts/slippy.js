@@ -175,7 +175,7 @@
             $.alert('Error: ' + error.message);
         }
     };
-
+    
     /**
      * Navigation
      */
@@ -322,7 +322,12 @@
     };
 
     nextSlide = function(e) {
-        if (slides.length < curSlide + 2) { return; }
+        //if (slides.length < curSlide + 2) { return; }
+        if (slides.length-1 == curSlide) {
+            showSlide(0);
+            return;
+        }
+        
         if (slides[curSlide]) {
             animOutForward(slides[curSlide]);
         }
@@ -427,6 +432,8 @@
             curSlide = -1;
             nextSlide();
         }
+        
+        
     };
 }(jQuery));
 
