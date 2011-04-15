@@ -22,7 +22,9 @@ var newTimeout = null;
     var slides, curSlide, options, inOverview,
         // methods
         buildSlide, preparePreTags, executeCode, nextSlide, prevSlide, showSlide, setSlide,
-        keyboardNav, antiScroll, urlChange, autoSize, clickNav, animInForward, animInRewind, animOutForward, animOutRewind;
+        keyboardNav, antiScroll, urlChange, autoSize, clickNav, animInForward, animInRewind, animOutForward, animOutRewind,
+        // timed slideshower methods
+        togglePauseTimedSlideshower, resetTimedSlideshower, timedSlideshower;
 
     /**
      * Init slides
@@ -192,12 +194,22 @@ var newTimeout = null;
     };
 
     timedSlideshower = function() {
-      console.log("ZOMG");
       nextSlide();
       
       if (currentTimeout != newTimeout) {
         currentTimeout = newTimeout;
         resetTimedSlideshower();
+      }
+    };
+    
+    togglePauseTimedSlideshower = function() {
+      if (currentTimeout == null) return;
+      
+      if (slippyTimerId == null) {
+        slippyTimerId = setInterval(timedSlideshower, currentTimeout);
+      } else {
+        clearInterval(slippyTimerId);
+        slippyTimerId = null;
       }
     };
     
@@ -221,7 +233,7 @@ var newTimeout = null;
         
         return function(e) {
             if (e.altKey || e.ctrlKey || inOverview) { return; }
-
+            
             switch (e.keyCode) {
             // handle right/down arrow + space + page down
             case 32:
@@ -254,7 +266,11 @@ var newTimeout = null;
                     cleanNav();
                 }
                 break;
-
+            
+            case 80:
+                togglePauseTimedSlideshower();
+                break;
+            
             // handle question mark / F1
             case 112:
             case 188:
