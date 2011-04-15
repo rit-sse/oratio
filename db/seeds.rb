@@ -9,6 +9,7 @@
 unless AllowedUsers.count > 0
   AllowedUsers.create([
     { :name => "Cody Krieger", :username => "cjk7752" },
+    { :name => "Brian Wyant", :username => "bmw8952" },
     { :name => "Brian To", :username => "bxt5647" },
     { :name => "Danjo", :username => "dgj7531" }
     ])
@@ -43,3 +44,11 @@ unless SlideType.count > 0
     { :name => "RSS Feed" }
     ])
 end
+
+# unless Slide.count > 0
+#   Slideshow.all.each do |slideshow|
+#     Slide.create([
+#       { :title => "Slide 1", :slideshow_id => slideshow.id, :content => '<h2 class="hcenter vcenter">testing</h2>' }
+#       ])
+#   end
+# end

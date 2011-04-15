@@ -5,18 +5,15 @@
 <% end %>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-  </tr>
-
-<% @slide_types.each do |slide_type| %>
-  <tr>
-    <td><%= slide_type.name %></td>
-    <td class="actions">
-      <%= link_to 'Edit', edit_slide_type_path(slide_type), :class => "button" %>
-      <%= link_to 'Destroy', slide_type, :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
-    </td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @slide_types.each do |slide_type| %>
+      <tr>
+        <td><%= slide_type.name %></td>
+        <td class="actions">
+          <%= link_to 'Edit', edit_slide_type_path(slide_type), :class => "button" %>
+          <%= link_to 'Destroy', slide_type, :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

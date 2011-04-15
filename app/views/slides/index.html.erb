@@ -4,23 +4,18 @@
   <%= link_to 'New Slide', new_slideshow_slide_path, :class => "medium button" %>
 <% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Slide type</th>
-    <th></th>
-  </tr>
-
-<% @slides.each do |slide| %>
-  <tr class="<%= cycle "odd", "even" %>">
-    <td><%= link_to slide.title, [@slideshow, slide] %></td>
-    <td><%= slide.content %></td>
-    <td><%= slide.slide_type.name %></td>
-    <td class="actions">
-      <%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, slide), :class => "button" %>
-      <%= link_to 'Destroy', [@slideshow, slide], :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
-    </td>
-  </tr>
-<% end %>
+<table class="sortable">
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr id="<%= slide.id %>">
+        <td>
+          <%= slide.title %>
+        </td>
+        <td class="actions">
+          <%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, slide), :class => "button" %>
+          <%= link_to 'Destroy', [@slideshow, slide], :class => "red button", :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

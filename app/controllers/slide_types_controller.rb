@@ -1,4 +1,6 @@
 class SlideTypesController < ApplicationController
+  before_filter :authorize!
+  
   # GET /slide_types
   # GET /slide_types.xml
   def index

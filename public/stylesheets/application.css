@@ -26,42 +26,6 @@ src: local('☺'), url('/fonts/LiberationSans-Italic-webfont.woff') format('woff
 font-weight: 400;
 font-style: italic;
 }
-@font-face {
-font-family: 'Liberation Sans';
-src: url('/fonts/LiberationSans-Regular-webfont.eot');
-src: local('☺'), url('/fonts/LiberationSans-Regular-webfont.woff') format('woff'), url('/fonts/LiberationSans-Regular-webfont.ttf') format('truetype'), url('/fonts/LiberationSans-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: normal;
-}
-
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Bold-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Bold-webfont.woff') format('woff'), url('/fonts/DroidSerif-Bold-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Bold-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 700;
-font-style: normal;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-BoldItalic-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-BoldItalic-webfont.woff') format('woff'), url('/fonts/DroidSerif-BoldItalic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-BoldItalic-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 700;
-font-style: italic;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Italic-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Italic-webfont.woff') format('woff'), url('/fonts/DroidSerif-Italic-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Italic-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: italic;
-}
-@font-face {
-font-family: 'Droid Serif';
-src: url('/fonts/DroidSerif-Regular-webfont.eot');
-src: local('☺'), url('/fonts/DroidSerif-Regular-webfont.woff') format('woff'), url('/fonts/DroidSerif-Regular-webfont.ttf') format('truetype'), url('/fonts/DroidSerif-Regular-webfont.svg#webfontX4pGz9fc') format('svg');
-font-weight: 400;
-font-style: normal;
-}
 
 @font-face {
 font-family: 'Lobster 13';
@@ -81,17 +45,17 @@ font-style: normal;
 
 /* tag styles */
 body {
-  font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino", "Hoefler Text", "Baskerville", serif;
-  font-size: 0.985em;
+  font: normal normal normal 14px/18px 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+  font-size: 0.92em; /*0.985em;*/
   color: #444;
 }
 
 a {
-  color: #338435;
+  color: #283f73;
   text-decoration: none;
 }
 a:hover {
-  color: #256026;
+  color: #121c33;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -118,24 +82,31 @@ code {
 /* tables */
 table {
   width: 100%;
+  background: #ddd;
+}
+table.sortable, table.sortable tr {
+  width: 100%;
 }
 th {
   font-weight: bold;
-  padding: 5px;
+  padding: 4px;
 }
 td {
-  padding: 5px;
-  border: 1px solid #bbb;
+  padding: 4px;
+  border-top: 1px solid #bbb;
 }
-td.actions {
-  text-align: right;
+tbody tr {
+  background: #fff;
+}
+tbody tr:hover {
+  background: #ffddde;
 }
 
 /* form styles */
-input[type=text], input[type=password], textarea { display: block; background: #fff url(../images/input-bg.png) no-repeat 0 0; padding: 3px 5px; margin: 0 0 10px 0; border: 1px solid #bbb; -webkit-border-radius: 3px; font: 13px/18px "Liberation Sans", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; text-shadow: 0 0 1px #fff; color: #666; }
+input[type=text], input[type=password], textarea { display: block; background: #fff url(../images/input-bg.png) no-repeat 0 0; padding: 3px 5px; margin: 0 0 10px 0; border: 1px solid #bbb; -webkit-border-radius: 3px; font: 13px/18px "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; text-shadow: 0 0 1px #fff; color: #666; }
 select:focus, input[type=text]:focus, input[type=password]:focus, textarea:focus { outline: none; }
 input[type=text]:focus, input[type=password]:focus, textarea:focus { border: 1px dashed #333; color: #333; }
-textarea { width: 500px; height: 200px; }
+textarea { width: 500px; height: 200px; font: 13px/18px 'Andale Mono'; letter-spacing: -1px; }
 select { display: inline-block; margin-top: 6px; }
 
 form { margin: 0 0 15px; }
@@ -164,27 +135,27 @@ form div.actions { margin: 10px 0 0; }
   border: 1px solid #893b3b;
 }
 
-.odd {
-  background: #e3e3e3;
-}
-.odd:hover, .even:hover {
-  background: #ffddde;
-}
-
 .huge-list {
 }
 .huge-list > div {
+  border-top: 1px solid #bbb;
   padding: 7px;
 }
+.huge-list > div:hover, .huge-list > div:hover {
+  background: #ffddde;
+}
 .huge-list > div .title {
-  font-size: 2.4em;
+  font-size: 2.1em;
+}
+
+td.actions {
+  width: 1px;
+  white-space: nowrap;
 }
 
 .edit-controls {
   font-size: 0.8em;
   padding: 10px 0 3px;
-  margin: 10px 0 0;
-  border-top: 1px dashed #bbb;
 }
 .edit-controls a {
   display: inline-block;

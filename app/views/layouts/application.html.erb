@@ -3,14 +3,24 @@
 <head>
   <title>
     <% if content_for? :head_title %>
-    <%= yield(:head_title) %>
-    - <%= @app_name %>
+      <%= yield(:head_title) %>
+      - <%= @app_name %>
     <% else %>
-    <%= @app_name %>
+      <%= @app_name %>
     <% end%>
   </title>
   <%= stylesheet_link_tag 'application', 'page' %>
-  <%= javascript_include_tag 'jquery', 'rails', 'application' %>
+  <% unless @stylesheets.nil? %>
+    <% @stylesheets.each do |s| %>
+      <%= stylesheet_link_tag s %>
+    <% end %>
+  <% end %>
+  <%= javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'application' %>
+  <% unless @javascripts.nil? %>
+    <% @javascripts.each do |j| %>
+      <%= javascript_include_tag j %>
+    <% end %>
+  <% end %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -53,11 +63,13 @@
     </div>
     
     <div id="footer">
-      &copy; <%= DateTime.now.year %> <%= link_to "Cody Krieger", "https://github.com/codykrieger" %> 
-      &amp; <%= link_to "Brian To", "https://github.com/brianto" %> of the 
-      <%= link_to "Society of Software Engineers", "http://sse.se.rit.edu" %>.
+      &copy; <%= DateTime.now.year %> <%= link_to "Cody Krieger", "https://github.com/codykrieger" %>, 
+      <%= link_to "Brian Wyant", "https://github.com/SirHearse" %> 
+      &amp; <%= link_to "Brian To", "https://github.com/brianto" %>
+      <br />
+      of the <%= link_to "RIT Society of Software Engineers", "http://sse.se.rit.edu" %>.
       
-      <% if Rails.env.development? %>
+      <% if false #Rails.env.development? %>
       <br /><br />
       <code>
         Session info:

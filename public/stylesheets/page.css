@@ -12,12 +12,9 @@ body {
 
 #current-login {
   position: absolute;
-  top: -13px;
+  top: -5px;
   right: 0;
-  padding: 5px 7px;
-  background: #e3e3e3;
-  -webkit-border-radius: 7px;
-  border: 3px solid #fff;
+  padding: 0 15px;
   text-align: right;
 }
 
@@ -36,6 +33,7 @@ h1#app-name a {
   padding: 15px;
   background: #fff;
   -webkit-border-radius: 7px;
+  -webkit-box-shadow: 0 0 6px 1px rgba(0,0,0,.2);
   position: relative;
 }
 
