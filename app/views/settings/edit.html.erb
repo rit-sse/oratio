@@ -5,9 +5,22 @@
 <p>The options available for configuration.</p>
 
 <div class="settings-list">
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited the settings from being saved:</h2>
+
+      <ul>
+      <% @setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= render "form" %>
 
   <div class="all-users">
+    <div class="setting-title">Allowed Users:</div>
     <% @users.each do |user| %>
        <div class="user-display">
          <div class="user-title"><%= user.name %></div>
@@ -23,7 +36,3 @@
   </div>
   
 </div>
-  <div class="setting-title">Default Timeout:</div>
-  <div class="setting-desc"><%= @setting.default_timeout %></div>
-
-  <div class="setting-title">Allowed Users:</div>

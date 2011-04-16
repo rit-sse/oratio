@@ -23,7 +23,7 @@ class SettingsController < ApplicationController
         format.html { redirect_to(edit_setting_path, :notice => 'Settings were successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "index" }
+        format.html { redirect_to(edit_setting_path, :notice => "Settings failed to update.") }
         format.xml  { render :xml => @setting.errors, :status => :unprocessable_entity }
       end
     end
