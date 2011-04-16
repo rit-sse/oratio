@@ -12,8 +12,7 @@ Oratio::Application.routes.draw do
   match '/diagnostics', :to => 'diagnostics#index'
   match '/diagnostics/:action', :controller => 'diagnostics'
 
-  match '/settings', :to => 'settings#index'
-  match '/settings/:action', :controller => 'settings'
+  resource :setting
  
   root :to => "welcome#index"
   

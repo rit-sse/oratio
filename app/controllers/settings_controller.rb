@@ -1,30 +1,30 @@
 class SettingsController < ApplicationController
   before_filter :authorize!
 
-  # GET /settings
-  # GET /settings.xml
-  def index
+  # GET /settings/edit
+  # GET /settings/edit.xml
+  def edit
     @users ||= AllowedUsers.all
-    @settings ||= Settings.load
+    @setting ||= Settings.load
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @slides }
+      format.xml  { render :xml => @setting }
     end
   end
 
-  # POST /settings/edit
-  # POST /settings/edit.xml
-  def edit
-    @settings ||= Settings.load()
+  # PUT /settings
+  # PUT /settings.xml
+  def update
+    @setting ||= Settings.load()
 
     respond_to do |format|
-      if @settings.update(params[:settings])
-        format.html { redirect_to(:action => "index", :notice => 'Settings were successfully updated.') }
+      if @setting.update(params[:settings])
+        format.html { redirect_to(edit_setting_path, :notice => 'Settings were successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "index" }
-        format.xml  { render :xml => @settings.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @setting.errors, :status => :unprocessable_entity }
       end
     end
   end
