@@ -12,12 +12,19 @@
  */
 "use strict";
 
+var slippyTimerId = null;
+var origTimeout = null;
+var currentTimeout = null;
+var newTimeout = null;
+
 // Slide deck module
 (function($) {
     var slides, curSlide, options, inOverview,
         // methods
         buildSlide, preparePreTags, executeCode, nextSlide, prevSlide, showSlide, setSlide,
-        keyboardNav, antiScroll, urlChange, autoSize, clickNav, animInForward, animInRewind, animOutForward, animOutRewind;
+        keyboardNav, antiScroll, urlChange, autoSize, clickNav, animInForward, animInRewind, animOutForward, animOutRewind,
+        // timed slideshower methods
+        togglePauseTimedSlideshower, resetTimedSlideshower, timedSlideshower;
 
     /**
      * Init slides
@@ -175,7 +182,37 @@
             $.alert('Error: ' + error.message);
         }
     };
+    
+    /**
+     * Timed Slideshower! Do a barrel roll!
+     */
+    resetTimedSlideshower = function() {
+      if (slippyTimerId == null) return;
+      
+      // clearInterval(slippyTimerId);
+      // slippyTimerId = setInterval(timedSlideshower, newTimeout);
+    };
 
+    timedSlideshower = function() {
+      nextSlide();
+      
+      if (currentTimeout != newTimeout) {
+        currentTimeout = newTimeout;
+        resetTimedSlideshower();
+      }
+    };
+    
+    togglePauseTimedSlideshower = function() {
+      if (currentTimeout == null) return;
+      
+      if (slippyTimerId == null) {
+        slippyTimerId = setInterval(timedSlideshower, currentTimeout);
+      } else {
+        clearInterval(slippyTimerId);
+        slippyTimerId = null;
+      }
+    };
+    
     /**
      * Navigation
      */
@@ -183,17 +220,20 @@
         var targetSlide = null, switcher, timeout,
             // methods
             cleanNav;
-
+        
         cleanNav = function() {
             clearTimeout(timeout);
             targetSlide = null;
             switcher.remove();
             switcher = null;
         };
-
+        
+        // prevent timer from kicking in too quickly
+        resetTimedSlideshower();
+        
         return function(e) {
             if (e.altKey || e.ctrlKey || inOverview) { return; }
-
+            
             switch (e.keyCode) {
             // handle right/down arrow + space + page down
             case 32:
@@ -226,7 +266,12 @@
                     cleanNav();
                 }
                 break;
-
+            
+            // handle pausing the slideshow
+            case 80:
+                togglePauseTimedSlideshower();
+                break;
+            
             // handle question mark / F1
             case 112:
             case 188:
@@ -290,7 +335,10 @@
 
     clickNav = (function() {
         var timeout, armed = false;
-
+        
+        // prevent timer from kicking in too quickly
+        resetTimedSlideshower();
+        
         return function(e) {
             if (e.target.nodeName === 'A') { return; }
             clearTimeout(timeout);
@@ -322,7 +370,12 @@
     };
 
     nextSlide = function(e) {
-        if (slides.length < curSlide + 2) { return; }
+        //if (slides.length < curSlide + 2) { return; }
+        if (slides.length-1 == curSlide) {
+            showSlide(0);
+            return;
+        }
+        
         if (slides[curSlide]) {
             animOutForward(slides[curSlide]);
         }
@@ -390,7 +443,8 @@
             animOutForward: animOutForward,
             animOutRewind: animOutRewind,
             // width/height ratio of the slides, defaults to 1.3 (620x476)
-            ratio: 1.777777778
+            ratio: 1.777777778,
+            timeOut: null
         };
 
         options = $.extend(defaults, settings);
@@ -426,6 +480,13 @@
         if (curSlide === undefined) {
             curSlide = -1;
             nextSlide();
+        }
+        
+        if (options.timeOut != null) {
+          origTimeout = options.timeOut;
+          currentTimeout = options.timeOut;
+          newTimeout = options.timeOut;
+          slippyTimerId = setInterval(timedSlideshower, options.timeOut);
         }
     };
 }(jQuery));

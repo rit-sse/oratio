@@ -38,7 +38,6 @@ module ApplicationHelper
       "moin moin",
       "privet",
       "hola",
-      "こんにちは",
       "hallo",
       "barev",
       "namaskar",
