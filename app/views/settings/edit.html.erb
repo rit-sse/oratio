@@ -21,18 +21,18 @@
 
   <div class="all-users">
     <div class="setting-title">Allowed Users:</div>
+    <%= link_to "Add User", new_allowed_user_path, :class => "button" %>
     <% @users.each do |user| %>
        <div class="user-display">
          <div class="user-title"><%= user.name %></div>
          <div class="user-desc"><%= user.username %></div>
          <div class="user-controls">
+           <%= link_to "Show User", allowed_user_path(user), :class => "button" %>
+           <%= link_to "Edit User", edit_allowed_user_path(user), :class => "button" %>
+           <%= link_to "Delete User", user, :class => "red button", :method => :delete, :confirm => "Are you sure?" %>
          </div>
        </div>
     <% end %>
-  </div>
-
-  <div class="add-user">
-
   </div>
   
 </div>

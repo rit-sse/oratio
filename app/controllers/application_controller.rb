@@ -15,8 +15,9 @@ protected
   
   def sign_in_path; "/auth/ldap"; end
   def sign_out_path; "/auth/sign_out"; end
+  def allowed_users_index_path; "/allowed_users"; end
 
-  helper_method :current_user, :signed_in?, :sign_in_path, :sign_out_path
+  helper_method :current_user, :signed_in?, :sign_in_path, :sign_out_path, :allowed_users_index_path
 
   def current_user=(user)
     @current_user = user

@@ -1,6 +1,6 @@
 Oratio::Application.routes.draw do
 
-  resources :users
+  resources :allowed_users
 
   resources :slide_types
   resources :slideshows do
