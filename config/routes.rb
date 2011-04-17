@@ -1,9 +1,13 @@
 Oratio::Application.routes.draw do
 
+  resources :users
+
   resources :slide_types
   resources :slideshows do
     resources :slides
   end
+
+  resource :setting
   
   match '/auth/:provider/callback', :to => 'sessions#callback'
   match '/auth/failure', :to => 'sessions#login_failure'
@@ -11,8 +15,6 @@ Oratio::Application.routes.draw do
   
   match '/diagnostics', :to => 'diagnostics#index'
   match '/diagnostics/:action', :controller => 'diagnostics'
-
-  resource :setting
  
   root :to => "welcome#index"
   
