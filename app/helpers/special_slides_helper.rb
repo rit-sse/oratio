@@ -1,0 +1,2 @@
+module SpecialSlidesHelper
+end

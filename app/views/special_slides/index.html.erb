@@ -1,0 +1,10 @@
+<% title "SpecialSlides (tm)" %>
+
+<% actions do %>
+  <% if @logged_in %>
+    <%= link_to "Sign out of Google", { :action => :logout }, :class => "medium button" %>
+  <% end %>
+<% end %>
+
+<%= @login_token %>
+
