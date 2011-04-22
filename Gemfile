@@ -10,6 +10,8 @@ gem "omniauth"
 gem 'capistrano'
 gem 'capistrano-ext'
 
+gem 'xml-simple'
+
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "cucumber-rails", :group => :test
 gem "capybara", :group => :test
