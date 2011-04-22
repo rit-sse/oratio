@@ -10,12 +10,15 @@ class SpecialSlidesController < ApplicationController
     @resp = resp.body
     
     @stuff = []
+    @tags = []
     data = XmlSimple.xml_in(resp.body)
     data['entry'].each do |item|
       item.sort.each do |k, v|
-        if ["title", "Url"].include? k
-          @stuff += [v[0]['content'].to_s] if k == "title"
-          # @stuff += ["&nbsp;&nbsp; => #{v[0]}"] if k == "Url"
+        @tags += [k]
+        if ["title", "comments", "when", "where", "who"].include? k
+          @stuff += ["<br />#{v[0]['content'].to_s}"] if k == "title"
+          @stuff += [" => #{v[0]['startTime']} - #{v[0]['endTime']}"] if k == "when"
+          @stuff += [" => #{v[0]['valueString']}"] if k == "where"
         end
       end
     end

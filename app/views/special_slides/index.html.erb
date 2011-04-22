@@ -7,6 +7,6 @@
 <% end %>
 
 <% @stuff.each do |line| %>
-  <%= line %><br />
+  <%= line.html_safe %><br />
 <% end %>
 
