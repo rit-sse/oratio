@@ -8,9 +8,9 @@
 
 <% @events.each do |event| %>
   <p>
-    <%= event[:title] %><br />
-    <%= "@#{event[:where]}" unless event[:where].nil? or event[:where].empty? %><br />
-    <%= "#{format_dates event[:start_time], event[:end_time]}" if event[:start_time] %>
+    <strong><%= event[:title] %></strong><br /><br />
+    <%= "Where: #{event[:where]}<br />".html_safe unless event[:where].nil? or event[:where].empty? %>
+    <%= "When: #{controller.format_dates event[:start_time], event[:end_time]}" if event[:start_time] %>
   </p>
   <hr />
 <% end %>

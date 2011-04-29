@@ -4,6 +4,8 @@ class SpecialSlidesController < ApplicationController
   require 'xmlsimple'
 
   # before_filter :check_google_login, :except => [:login, :do_login]
+  
+  COMMON_FORMAT = '%A, %B %e %Y'
 
   def index
     resp = get_feed('https://www.google.com/calendar/feeds/ssemember@gmail.com/public/full')
@@ -20,8 +22,8 @@ class SpecialSlidesController < ApplicationController
           if k == "title"
             @events += [{ :title => v[0]['content'].to_s }]
           elsif k == "when"
-            @events.last[:start_time] = DateTime.parse(v[0]['startTime'].to_s).strftime '%A, %B %e %Y'
-            @events.last[:end_time] = DateTime.parse(v[0]['endTime'].to_s).strftime '%A, %B %e %Y'
+            @events.last[:start_time] = DateTime.parse(v[0]['startTime'].to_s)
+            @events.last[:end_time] = DateTime.parse(v[0]['endTime'].to_s)
           elsif k == "where"
             @events.last[:where] = v[0]['valueString'].to_s
           end
@@ -30,22 +32,20 @@ class SpecialSlidesController < ApplicationController
     end
   end
 
-protected
-
-  class DateTime
-    def common_format
-      self.strftime '%A, %B %e %Y'
-    end
-  end
-
-  def format_dates(*dates)
+  def format_dates(date1, date2)
     retval = ''
-    dates.each do |date|
-      retval << date.common_format unless retval == date.common_format
-      retval << ' - ' unless retval.empty?
+    if date1.strftime(COMMON_FORMAT) == date2.strftime(COMMON_FORMAT)
+      retval << "#{date1.strftime(COMMON_FORMAT)}, "
+      retval << "#{date1.strftime('%l:%M%P')} - #{date2.strftime('%l:%M%P')}"
+    else
+      retval << "#{date1.strftime(COMMON_FORMAT)}, #{date1.strftime('%l:%M%P')}"
+      retval << ' - '
+      retval << "#{date2.strftime(COMMON_FORMAT)}, #{date2.strftime('%l:%M%P')}"
     end
     retval
   end
+
+protected
 
   def get_feed(uri)
     uri = URI.parse(uri)
