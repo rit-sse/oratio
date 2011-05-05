@@ -15,4 +15,8 @@ class SlideType < ActiveRecord::Base
     self.name.downcase == "calendar"
   end
 
+  def is_photos?
+    self.name.downcase == "photos"
+  end
+
 end

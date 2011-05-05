@@ -4,6 +4,7 @@
   <div class="slide">
     <h1><%= slide.title %></h1>
     <% if slide.slide_type.is_calendar? %>
+
       <% events = get_events slide.content %>
       <% events.each do |e| %>
         <p>
@@ -13,6 +14,14 @@
         </p>
         <hr />
       <% end %>
+
+    <% elsif slide.slide_type.is_photos? %>
+
+      <% photos = get_photos slide.content %>
+      <% photos.each do |p| %>
+        <%= image_tag p[:src], :alt => '' %>
+      <% end %>
+
     <% else %>
       <%= slide.content.html_safe %>
     <% end %>

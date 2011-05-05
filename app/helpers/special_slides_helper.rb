@@ -11,6 +11,9 @@ module SpecialSlidesHelper
     events = []
 
     urls.each do |url|
+      url = url.gsub(/#.+/, '').strip
+      next if url.empty?
+
       resp = get_feed("https://www.google.com/calendar/feeds/#{url.strip}/public/full")
 
       data = XmlSimple.xml_in(resp.body)
