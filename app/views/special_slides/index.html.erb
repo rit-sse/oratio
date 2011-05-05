@@ -1,17 +1,4 @@
 <% title "SpecialSlides (tm)" %>
 
-<% actions do %>
-  <% if @logged_in %>
-    <%= link_to "Sign out from Google", { :action => :logout }, :class => "medium button" %>
-  <% end %>
-<% end %>
-
-<% @events.each do |event| %>
-  <p>
-    <strong><%= event[:title] %></strong><br /><br />
-    <%= "Where: #{event[:where]}<br />".html_safe unless event[:where].nil? or event[:where].empty? %>
-    <%= "When: #{format_dates event[:start_time], event[:end_time]}" if event[:start_time] %>
-  </p>
-  <hr />
-<% end %>
+Nothing to see here folks!
 
