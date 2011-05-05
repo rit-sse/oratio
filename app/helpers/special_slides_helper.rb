@@ -31,7 +31,7 @@ module SpecialSlidesHelper
     end
 
     results = events.map do |event|
-      if event[:start_time].nil? || !(event[:start_time] <= 10.days.from_now and event[:start_time] >= DateTime.now)
+      if event[:start_time].nil? || !(event[:start_time] <= 10.days.from_now and event[:start_time] >= 1.day.ago)
         nil
       else
         event
