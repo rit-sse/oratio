@@ -33,17 +33,19 @@ module SpecialSlidesHelper
       end
     end
 
+    # keep events from now until two weeks from now, discard the rest
     results = events.map do |event|
-      if event[:start_time].nil? || !(event[:start_time] <= 10.days.from_now and event[:start_time] >= 1.day.ago)
+      if event[:start_time].nil? || !(event[:start_time] <= 2.weeks.from_now and event[:start_time] >= 1.day.ago)
         nil
       else
         event
       end
     end
 
+    # compact, sort, and return the first 8 results
     results.compact.sort do |event1, event2|
       event1[:start_time] <=> event2[:start_time]
-    end
+    end[0..7]
   end
 
   def get_feed(uri)
