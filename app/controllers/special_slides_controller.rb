@@ -32,19 +32,6 @@ class SpecialSlidesController < ApplicationController
     end
   end
 
-  def format_dates(date1, date2)
-    retval = ''
-    if date1.strftime(COMMON_FORMAT) == date2.strftime(COMMON_FORMAT)
-      retval << "#{date1.strftime(COMMON_FORMAT)}, "
-      retval << "#{date1.strftime('%l:%M%P')} - #{date2.strftime('%l:%M%P')}"
-    else
-      retval << "#{date1.strftime(COMMON_FORMAT)}, #{date1.strftime('%l:%M%P')}"
-      retval << ' - '
-      retval << "#{date2.strftime(COMMON_FORMAT)}, #{date2.strftime('%l:%M%P')}"
-    end
-    retval
-  end
-
 protected
 
   def get_feed(uri)
