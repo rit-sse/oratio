@@ -14,4 +14,6 @@
 class Slide < ActiveRecord::Base
   belongs_to :slideshow
   belongs_to :slide_type
+
+  default_scope :order => 'rank ASC'
 end
