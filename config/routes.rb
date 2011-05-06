@@ -3,6 +3,7 @@ Oratio::Application.routes.draw do
   resources :slide_types
   resources :slideshows do
     resources :slides
+    match 'update_order', :to => 'slideshows#update_order'
   end
   
   match '/auth/:provider/callback', :to => 'sessions#callback'
