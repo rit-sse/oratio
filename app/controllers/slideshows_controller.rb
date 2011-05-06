@@ -2,7 +2,11 @@ class SlideshowsController < ApplicationController
   
   before_filter :authorize!
   skip_before_filter :authorize!, :only => [:index, :show]
-  
+
+  def update_rank
+    render :text => params, :template => nil
+  end
+
   # GET /slideshows
   # GET /slideshows.xml
   def index

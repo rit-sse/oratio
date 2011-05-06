@@ -7,7 +7,7 @@
 <table class="sortable">
   <tbody>
     <% @slides.each do |slide| %>
-      <tr id="<%= slide.id %>">
+      <tr id="<%= slide.id %>" class="slide" rel="<%= slide.rank %>">
         <td>
           <%= slide.title %>
         </td>
