@@ -4,7 +4,8 @@ A web-based, AJAXy presentation software created for [RIT's](http://rit.edu)
 
 ## Authors
 Cody Krieger ([https://github.com/codykrieger](https://github.com/codykrieger))  
-Brian To ([https://github.com/brianto](https://github.com/brianto))
+Brian To ([https://github.com/brianto](https://github.com/brianto))  
+Brian Wyant ([https://github.com/sirhearse](https://github.com/sirhearse)
 
 ## Oratio's Purpose
 To provide a slick, minimal replacement to the SSE's current PowerPoint 
