@@ -23,10 +23,10 @@ $(document).ready(function() {
       type: 'post',
       data: data,
       success: function(data) {
-        console.log(data);
+        // console.log(data);
       },
       failure: function() {
-        console.log("fail");
+        // console.log("fail");
       }
     });
   }
