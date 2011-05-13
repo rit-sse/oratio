@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322204552) do
+ActiveRecord::Schema.define(:version => 20110507030112) do
 
   create_table "allowed_users", :force => true do |t|
     t.string   "name",       :null => false
@@ -26,12 +26,14 @@ ActiveRecord::Schema.define(:version => 20110322204552) do
   end
 
   create_table "slides", :force => true do |t|
-    t.string   "title",         :null => false
+    t.string   "title",                             :null => false
     t.text     "content"
-    t.integer  "slide_type_id", :null => false
-    t.integer  "slideshow_id",  :null => false
+    t.integer  "slide_type_id",                     :null => false
+    t.integer  "slideshow_id",                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rank",            :default => 0,    :null => false
+    t.integer  "visibility_time", :default => 3000, :null => false
   end
 
   create_table "slideshows", :force => true do |t|

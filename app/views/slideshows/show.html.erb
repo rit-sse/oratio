@@ -3,6 +3,27 @@
 <% @slideshow.slides.each do |slide| %>
   <div class="slide">
     <h1><%= slide.title %></h1>
-    <%= slide.content.html_safe %>
+    <% if slide.slide_type.is_calendar? %>
+
+      <% events = get_events slide.content %>
+      <% events.each do |e| %>
+        <p>
+          <strong><%= e[:title] %></strong><br /><br />
+          <%= "<strong>When</strong>: #{format_dates e[:start_time], e[:end_time]}".html_safe if e[:start_time] %>
+          <%= "// <strong>Where</strong>: #{e[:where]}".html_safe unless e[:where].nil? or e[:where].empty? %>
+        </p>
+        <hr />
+      <% end %>
+
+    <% elsif slide.slide_type.is_photos? %>
+
+      <% photos = get_photos slide.content %>
+      <% photos.each do |p| %>
+        <%= image_tag p[:src], :alt => '' %>
+      <% end %>
+
+    <% else %>
+      <%= slide.content.html_safe %>
+    <% end %>
   </div>
 <% end %>

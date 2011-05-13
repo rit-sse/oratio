@@ -2,7 +2,17 @@ class SlideshowsController < ApplicationController
   
   before_filter :authorize!
   skip_before_filter :authorize!, :only => [:index, :show]
-  
+
+  def update_rank
+    params[:slides].each do |k, v|
+      slide = Slide.find(v[:id])
+      slide.rank = v[:rank]
+      slide.save
+    end
+
+    render :nothing => true
+  end
+
   # GET /slideshows
   # GET /slideshows.xml
   def index
