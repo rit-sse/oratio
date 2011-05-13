@@ -148,6 +148,30 @@ form div.actions { margin: 10px 0 0; }
   font-size: 2.1em;
 }
 
+.settings-list {
+}
+.settings-list {
+  padding: 7px;
+}
+
+.allowed-users .title {
+}
+.allowed-users .title {
+  font-size: 1.7em;
+  margin: 0 0 8px 0;
+}
+
+.user-display {
+  border-top: 1px solid #bbb;
+  padding: 6px;
+}
+.user-display .name {
+  font-size: 1.2em;
+}
+.user-display .username {
+  margin: 0 0 3px 10px;
+}
+
 td.actions {
   width: 1px;
   white-space: nowrap;

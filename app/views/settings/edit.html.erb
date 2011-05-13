@@ -18,15 +18,17 @@
   <% end %>
 
   <%= render "form" %>
+</div>
 
+<div class="allowed-users">
+  <div class="title">Allowed Users</div>
+  <p>The users currently allowed to modify slideshows. <%= link_to "Add a user?", new_allowed_user_path %></p>
   <div class="all-users">
-    <div class="setting-title">Allowed Users:</div>
-    <%= link_to "Add User", new_allowed_user_path, :class => "button" %>
     <% @users.each do |user| %>
        <div class="user-display">
-         <div class="user-title"><%= user.name %></div>
-         <div class="user-desc"><%= user.username %></div>
-         <div class="user-controls">
+         <div class="name"><%= user.name %></div>
+         <div class="username"><%= user.username %></div>
+         <div class="controls">
            <%= link_to "Show User", allowed_user_path(user), :class => "button" %>
            <%= link_to "Edit User", edit_allowed_user_path(user), :class => "button" %>
            <%= link_to "Delete User", user, :class => "red button", :method => :delete, :confirm => "Are you sure?" %>
@@ -34,5 +36,4 @@
        </div>
     <% end %>
   </div>
-  
 </div>
